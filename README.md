@@ -23,7 +23,7 @@ The script will do:
 ## How to Use the Script
 
 - You need python3 ([Intall Python](https://www.python.org/downloads/)) to run the script.
-- You need OpenVPN (Install OpenVPN for [Windows](https://openvpn.net/community-downloads/), for Linux make sure you run update command befure running `apt install openvpn` on Ubuntu, Debian; `yum add openvpn` on CentOS) installed on your machine and `openvpn` command shoud be callable from the directory the scrip will run.
+- You need OpenVPN (Install [OpenVPN for Windows](https://openvpn.net/community-downloads/), for Linux make sure you run update command befure running `apt install openvpn` on Ubuntu, Debian; `yum add openvpn` on CentOS) installed on your machine and `openvpn` command shoud be callable from the directory the scrip will run.
 - Run the script by `python3 generateServerAndClientConfig.py` or `python generateServerAndClientConfig.py`.
 - Follow the prompt in the terminal to enter needed information.
 - Generated config files will be put in the save directory where the script is run.
