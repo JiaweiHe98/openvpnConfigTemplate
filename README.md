@@ -1,4 +1,4 @@
-# openvpnConfigTemplate
+# openvpnConfigTools
 
 ## Cannot Find a Script for Creating VPNs without Forwarding?
 
