@@ -32,23 +32,6 @@ if DEV not in ('tap', 'tun'):
 def cmd(command):
     os.system(command)
     
-SYS = input('Please input your server system (mac, win, or linux default linux)')
-
-if SYS not in ('mac', 'win', 'linux'):
-    SYS = 0
-elif SYS == 'mac' or SYS == 'linux':
-    SYS = 0
-else:  
-    SYS = 1
-    
-if SYS == 1:
-    win_settings = '''
-data-ciphers AES-256-CBC
-data-ciphers-fallback AES-256-CBC
-'''
-else:
-    win_settings = ''
-    
 # download easy-rsa
 if not os.path.exists('easy-rsa'):
     cmd('git clone https://github.com/OpenVPN/easy-rsa.git')
@@ -135,7 +118,9 @@ server 10.8.0.0 255.255.255.0
 client-to-client
 keepalive 10 120
 key-direction 0
-cipher AES-256-CBC{win_settings}
+cipher AES-256-GCM
+data-ciphers AES-256-GCM
+data-ciphers-fallback AES-256-GCM
 persist-key
 persist-tun
 status openvpn-status.log
@@ -178,7 +163,7 @@ persist-key
 persist-tun
 remote-cert-tls server
 auth SHA512
-cipher AES-256-CBC
+cipher AES-256-GCM
 key-direction 1
 verb 3
 
